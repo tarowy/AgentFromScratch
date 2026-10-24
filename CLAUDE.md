@@ -1,0 +1,19 @@
+# mini-agent
+
+Tarowy's from-scratch AI agent in plain Python — no agent framework (no LangChain/LangGraph here).
+Phase 1 of a learning plan toward AI agent engineering jobs (job search starts September 2027).
+Full plan: `/Users/tarowy/Project/Agent/agent-dev-context.md`. Current task brief: `/Users/tarowy/Project/Agent/tasks/`.
+
+## How Claude should help
+- **Tarowy writes the code.** Don't write or rewrite implementation code unless explicitly asked. Small snippets to illustrate an API shape are OK.
+- Explain concepts at whatever depth is asked; point to the relevant docs.
+- Debug by asking what was expected vs. observed, then hinting at the cause before giving the fix.
+- Review like an interviewer: correctness, error handling, edge cases, readability, and whether Tarowy can explain every line.
+- Setup and config files (`.gitignore`, `requirements.txt`, etc.) Claude may write when asked.
+
+## Project facts
+- Python, `openai` SDK against an **OpenAI-compatible endpoint** (custom `base_url`), with a hand-written agent loop. Primarily the Responses API, called statelessly (`store=False`, history managed in code, no `previous_response_id`).
+- `OPENAI_API_KEY`, `OPENAI_BASE_URL` and the model name come from `.env` via `share/env_loader.py` — never hardcode them, never print them.
+- Python env: conda; VS Code sets `PYTHONPATH` to the project root so `from share import ...` works.
+- Model output (tool inputs) is untrusted: no `eval()`/`exec()` on it.
+- Tasks so far: `01_hello.py` (first API call, multi-turn), `02_calculator.py` (first tool + loop with step limit).

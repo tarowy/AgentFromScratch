@@ -1,0 +1,26 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Agent run output (logs, traces, scratch files)
+logs/
+runs/
+*.log
+
+# Editors / OS
+.idea/
+.DS_Store
+
+# Symlink to the private learning-plan task briefs (lives in ~/Project/Agent)
+tasks
