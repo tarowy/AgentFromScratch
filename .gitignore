@@ -23,4 +23,4 @@ runs/
 .DS_Store
 
 # Symlink to the private learning-plan task briefs (lives in ~/Project/Agent)
-tasks
+Agent-Learning-Plan
